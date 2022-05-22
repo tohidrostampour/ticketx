@@ -9,6 +9,7 @@ djangorestframework = "*"
 drfpasswordless = "*"
 psycopg2 = "*"
 python-dotenv = "*"
+drf-yasg = "*"
 
 [dev-packages]
 
