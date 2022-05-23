@@ -27,10 +27,6 @@ class Ticket(BaseModel):
     )
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    ticket_number = models.UUIDField(
-        default=uuid.uuid4(),
-        editable=False,
-    )
     count = models.IntegerField(validators=[validate_count])
     type = models.IntegerField(
         choices=Type.choices,
