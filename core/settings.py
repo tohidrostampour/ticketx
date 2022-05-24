@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'ticket.apps.TicketConfig',
+    'customer.apps.CustomerConfig',
 
     'drf_yasg',
     'rest_framework',

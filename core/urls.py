@@ -23,6 +23,7 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('', include('drfpasswordless.urls')),
     path('', include('ticket.urls')),
+    path('', include('customer.urls')),
     path('admin/', admin.site.urls)
 ]
 
