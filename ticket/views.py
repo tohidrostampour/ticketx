@@ -1,11 +1,9 @@
-from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from ticket.models import Ticket, Order
-from ticket.permissions import IsOrderOwner
 from ticket.serializers import TicketSerializer, OrderSerializer
+from ticket.filters import TicketFilter
 
 
 class TicketViewSet(ModelViewSet):
@@ -13,6 +11,7 @@ class TicketViewSet(ModelViewSet):
     serializer_class = TicketSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
     http_method_names = ['get']
+    filterset_class = TicketFilter
 
 
 class OrderViewSet(ModelViewSet):
