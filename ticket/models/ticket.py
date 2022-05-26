@@ -30,7 +30,12 @@ class Ticket(BaseModel):
         choices=Type.choices,
         default=Type.BUS,
     )
-    price = models.DecimalField(max_digits=18, decimal_places=4, validators=[validate_price], null=True)
+    price = models.DecimalField(
+        max_digits=18,
+        decimal_places=2,
+        validators=[validate_price],
+        null=True
+    )
 
     def _validate_start_end_dates(self):
         if self.end_time < self.start_time:
