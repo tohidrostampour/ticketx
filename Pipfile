@@ -9,6 +9,8 @@ djangorestframework = "*"
 drfpasswordless = "*"
 psycopg2 = "*"
 python-dotenv = "*"
+drf-yasg = "*"
+django-filter = "*"
 
 [dev-packages]
 
