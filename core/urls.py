@@ -24,6 +24,5 @@ urlpatterns = [
     path('', include('drfpasswordless.urls')),
     path('', include('ticket.urls')),
     path('', include('customer.urls')),
-    path('admin/', admin.site.urls)
+    path('', include('payment.urls'))
 ]
-
