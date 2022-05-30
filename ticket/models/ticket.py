@@ -37,6 +37,10 @@ class Ticket(BaseModel):
         null=True
     )
 
+    code = models.CharField(
+        max_length=20,
+    )
+
     def _validate_start_end_dates(self):
         if self.end_time < self.start_time:
             raise ValidationError("End date cannot be before start date.")
