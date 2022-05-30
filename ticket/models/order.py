@@ -1,9 +1,10 @@
 from django.db import models
 
 from ticket.validators import validate_price, validate_count
+from utils.base_model import BaseModel
 
 
-class Order(models.Model):
+class Order(BaseModel):
     class State(models.IntegerChoices):
         WAITING = 0, 'Waiting'
         CANCELED = 1, 'Canceled'
@@ -30,7 +31,8 @@ class Order(models.Model):
     cost = models.DecimalField(
         max_digits=18,
         decimal_places=2,
-        default=0
+        default=0,
+        validators=[validate_price]
     )
     state = models.IntegerField(
         choices=State.choices,

@@ -3,11 +3,12 @@ import datetime
 from django.db import models
 from django.contrib.auth import get_user_model
 
+from utils.base_model import BaseModel
 
 User = get_user_model()
 
 
-class Customer(models.Model):
+class Customer(BaseModel):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
@@ -30,6 +31,7 @@ class Customer(models.Model):
     birth_date = models.DateTimeField(
         default=datetime.datetime.now
     )
+    is_registered = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

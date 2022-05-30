@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 from customer.models import Customer
@@ -14,5 +14,12 @@ def create_customer_profile(sender, instance, created, **kwargs):
 
 
 @receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
+def save_customer_profile(sender, instance, **kwargs):
     instance.customer.save()
+
+
+@receiver(pre_save, sender=Customer)
+def update_customer_state(sender, instance, **kwargs):
+    if not instance._state.adding:
+        instance.is_registered = False
+
