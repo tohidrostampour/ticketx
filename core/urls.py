@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -24,6 +23,5 @@ urlpatterns = [
     path('', include('drfpasswordless.urls')),
     path('', include('ticket.urls')),
     path('', include('customer.urls')),
-    path('admin/', admin.site.urls)
+    path('', include('payment.urls'))
 ]
-
