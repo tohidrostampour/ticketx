@@ -1,2 +1,3 @@
-from ticket.models.ticket import Ticket
-from ticket.models.order import Order
+from .ticket import Ticket
+from .order import Order
+from .receipt import Receipt
