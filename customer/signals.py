@@ -18,3 +18,8 @@ def update_customer_state(sender, instance, **kwargs):
     if not instance._state.adding:
         instance.is_registered = False
 
+
+
+@receiver(pre_save, sender=User)
+def unique_username(sender, instance, **kwargs):
+    instance.username = instance.email

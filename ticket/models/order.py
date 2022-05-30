@@ -1,4 +1,5 @@
 from django.db import models
+from utils.base_model import BaseModel
 
 from ticket.validators import validate_price, validate_count
 from utils.base_model import BaseModel

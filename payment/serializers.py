@@ -7,3 +7,9 @@ class WalletSerializer(ModelSerializer):
         model = Wallet
         fields = '__all__'
         read_only_fields = ('id', 'user')
+
+    def update(self, instance, validated_data):
+        instance.amount += validated_data.get('amount')
+        instance.save()
+
+        return instance
