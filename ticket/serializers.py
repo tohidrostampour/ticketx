@@ -7,6 +7,7 @@ class TicketSerializer(ModelSerializer):
     class Meta:
         model = Ticket
         fields = '__all__'
+        read_only_fields = ('user',)
 
 
 class OrderSerializer(ModelSerializer):
