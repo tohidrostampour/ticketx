@@ -23,8 +23,8 @@ class Ticket(BaseModel):
     destination = models.CharField(
         max_length=220,
     )
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateField()
+    end_time = models.DateField()
     count = models.IntegerField(validators=[validate_count])
     type = models.IntegerField(
         choices=Type.choices,
