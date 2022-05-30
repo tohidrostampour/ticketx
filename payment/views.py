@@ -20,4 +20,4 @@ class WalletRetrieveApiView(RetrieveAPIView):
 class WalletUpdateApiView(UpdateAPIView):
     queryset = Wallet.objects.all()
     serializer_class = WalletSerializer
-    permission_classes = (IsAuthenticated, IsAdminUser)
+    permission_classes = (IsAuthenticated,)
