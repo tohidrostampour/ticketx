@@ -12,4 +12,6 @@ class CustomerViewSet(ModelViewSet):
     permission_classes = [IsCustomerOrAdmin]
 
     def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
+        if self.request.user.is_authenticated:
+            return self.queryset.filter(user=self.request.user)
+
