@@ -12,6 +12,7 @@ python-dotenv = "*"
 drf-yasg = "*"
 django-filter = "*"
 django-cors-headers = "*"
+faker = "*"
 
 [dev-packages]
 
