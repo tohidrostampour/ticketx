@@ -8,7 +8,7 @@ from customer.permissions import IsCustomerOrAdmin
 class CustomerViewSet(ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
-    http_method_names = ['get', 'put', 'patch', 'delete']
+    http_method_names = ['get', 'put']
     permission_classes = [IsCustomerOrAdmin]
 
     def get_queryset(self):
