@@ -13,6 +13,9 @@ drf-yasg = "*"
 django-filter = "*"
 django-cors-headers = "*"
 faker = "*"
+whitenoise = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [dev-packages]
 
