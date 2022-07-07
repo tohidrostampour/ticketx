@@ -182,5 +182,6 @@ SWAGGER_SETTINGS = {
     'JSON_EDITOR': True,
 }
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 django_heroku.settings(locals())
